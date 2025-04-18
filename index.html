@@ -9,16 +9,47 @@
     html, body {
       margin: 0;
       padding: 0;
+      height: 100%;
       font-family: 'Noto Sans TC', sans-serif;
-      background: #111;
+      overflow-x: hidden;
       color: #fff;
+    }
+
+    body {
+      background: #000;
+    }
+
+    .bg-animate {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 120%;
+      height: 120%;
+      background: url('https://11th-exhibition.github.io/TrafficForWeb/images/1.3png.png') no-repeat center center;
+      background-size: cover;
+      z-index: -1;
+      animation: moveBackground 30s linear infinite alternate;
+      opacity: 0.6;
+      transform: scale(1.1);
+    }
+
+    @keyframes moveBackground {
+      0% {
+        transform: scale(1.1) translate(0px, 0px);
+      }
+      50% {
+        transform: scale(1.1) translate(-20px, -10px);
+      }
+      100% {
+        transform: scale(1.1) translate(10px, 10px);
+      }
     }
 
     .lang-toggle {
       position: fixed;
       top: 20px;
       right: 20px;
-      background-color: rgba(255,255,255,0.1);
+      background-color: rgba(0,0,0,0.4);
       color: #fff;
       border: 1px solid #fff;
       padding: 8px 12px;
@@ -28,13 +59,14 @@
     }
 
     .zone {
-      background-color: rgba(0, 0, 0, 0.7);
+      background-color: rgba(0, 0, 0, 0.3);
       margin: 40px auto;
-      padding: 40px;
+      padding: 32px;
       max-width: 960px;
       border-radius: 16px;
-      box-shadow: 0 4px 16px rgba(0,0,0,0.4);
-      backdrop-filter: blur(4px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      position: relative;
+      z-index: 1;
     }
 
     .zone h2 {
@@ -48,7 +80,7 @@
       max-width: 100%;
       border-radius: 12px;
       margin-bottom: 24px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.6);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.4);
     }
 
     ul {
@@ -87,6 +119,7 @@
   </style>
 </head>
 <body>
+  <div class="bg-animate"></div>
   <div class="lang-toggle" onclick="toggleLanguage()">English / 中文</div>
 
   <div class="zh active">
@@ -97,23 +130,14 @@
         <li>8501：高鐵左營站 ⇄ 義大世界（走國道10號）</li>
         <li>8502：高雄美術館 ⇄ 義大世界（經捷運巨蛋、凹子底站）</li>
         <li>8503：市政大樓 ⇄ 義大世界（經捷運文化中心站、臺鐵科工館站）</li>
-        <li>8504：鳳陽社區 ⇄ 義大世界（經捷運鳳山國中站、大東站、鳳山轉運站、臺鐵鳳山站）</li>
-        <li>8505：捷運前鎮高中站 ⇄ 義大世界（經捷運衛武營、苓雅運動園區站）</li>
-        <li>8506：臺鐵岡山車站 ⇄ 義大世界（經捷運岡山高醫站、橋頭火車站等）</li>
-        <li>96：義大醫院 ⇄ 義大世界</li>
-        <li>E03A：高鐵左營站 ⇄ 義大醫院（走國道10號）</li>
-        <li>E03B：高鐵左營站 ⇄ 義大醫院（經博愛四路、高楠公路等）</li>
       </ul>
-      <a href="https://www.edabus.com.tw/route/page/1/timetable" target="_blank" class="map-link">🚌 前往義大客運時刻表</a>
     </div>
 
     <div class="zone">
       <h2>🏫 義守大學 校本部資訊</h2>
       <img src="https://11th-exhibition.github.io/TrafficForWeb/images/義守大學校本部校門入口處.jpg" alt="義守大學校門入口">
       <p><strong>地址：</strong>84001 高雄市大樹區學城路一段1號</p>
-      <p><strong>電話：</strong>(07) 657-7711</p>
-      <p><strong>官方網站：</strong><a href="https://www.isu.edu.tw" target="_blank">https://www.isu.edu.tw</a></p>
-      <a href="https://maps.app.goo.gl/NSBhMy7bND6pUBBm7" class="map-link" target="_blank">📍 查看地圖</a>
+      <a href="https://maps.app.goo.gl/fJhTP1FP7kbsMpXMA" class="map-link" target="_blank">📍 查看地圖</a>
     </div>
   </div>
 
@@ -125,25 +149,14 @@
         <li>8501: Zuoying HSR ⇄ E-DA World (via Freeway No.10)</li>
         <li>8502: Art Museum ⇄ E-DA World (via MRT Arena, Aozihdi)</li>
         <li>8503: City Hall ⇄ E-DA World (via MRT Culture Center, TRA Museum)</li>
-        <li>8504: Fengyang ⇄ E-DA World (via MRT Fongshan Jr High, Dadong, TRA Fongshan)</li>
-        <li>8505: MRT Qianzhen HS ⇄ E-DA World (via MRT Weiwuying, Linyuan Park)</li>
-        <li>8506: TRA Gangshan ⇄ E-DA World (via MRT Gangshan, Qiaotou, Qingpu)</li>
-        <li>96: E-DA Hospital ⇄ E-DA World</li>
-        <li>E03A: Zuoying HSR ⇄ E-DA Hospital (via Freeway No.10)</li>
-        <li>E03B: Zuoying HSR ⇄ E-DA Hospital (via Bo’ai 4th Rd, Gaonan Rd)</li>
       </ul>
-      <a href="https://www.edabus.com.tw/route/page/1/timetable" target="_blank" class="map-link">🚌 View Bus Timetable</a>
     </div>
 
     <div class="zone">
       <h2>🏫 I-Shou University (Main Campus)</h2>
       <img src="https://11th-exhibition.github.io/TrafficForWeb/images/義守大學校本部校門入口處.jpg" alt="ISU Gate">
       <p><strong>Address:</strong> No.1, Sec.1, Xuecheng Rd., Dashu Dist., Kaohsiung City 84001</p>
-      <p><strong>Phone:</strong> +886-7-657-7711</p>
-      <p><strong>Website:</strong> <a href="https://www.isu.edu.tw" target="_blank">https://www.isu.edu.tw</a></p>
-      <p><strong>Overview:</strong> Founded by Lin Yi-Shou, ISU has 9 colleges, 43 departments and 2 English-medium programs, with over 15,000 students and 90% of faculty holding PhDs.</p>
-      <p><strong>Focus:</strong> Smart Healthcare & Tech Innovation for interdisciplinary talent development.</p>
-      <a href="https://maps.app.goo.gl/NSBhMy7bND6pUBBm7" class="map-link" target="_blank">📍 View on Google Maps</a>
+      <a href="https://maps.app.goo.gl/fJhTP1FP7kbsMpXMA" class="map-link" target="_blank">📍 View on Google Maps</a>
     </div>
   </div>
 
