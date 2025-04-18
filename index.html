@@ -34,15 +34,9 @@
     }
 
     @keyframes moveBackground {
-      0% {
-        transform: scale(1.1) translate(0px, 0px);
-      }
-      50% {
-        transform: scale(1.1) translate(-20px, -10px);
-      }
-      100% {
-        transform: scale(1.1) translate(10px, 10px);
-      }
+      0% { transform: scale(1.1) translate(0px, 0px); }
+      50% { transform: scale(1.1) translate(-20px, -10px); }
+      100% { transform: scale(1.1) translate(10px, 10px); }
     }
 
     .lang-toggle {
@@ -67,6 +61,17 @@
       box-shadow: 0 4px 12px rgba(0,0,0,0.3);
       position: relative;
       z-index: 1;
+      animation: fadeInUp 1s ease-out both;
+    }
+
+    .zone img:hover {
+      transform: scale(1.03);
+      transition: transform 0.4s ease;
+    }
+
+    @keyframes fadeInUp {
+      0% { opacity: 0; transform: translateY(40px); }
+      100% { opacity: 1; transform: translateY(0); }
     }
 
     .zone h2 {
@@ -116,34 +121,20 @@
     .zh.active, .en.active {
       display: block;
     }
-  
-    .zone {
-      animation: fadeInUp 1s ease-out both;
-    }
-
-    .zone img:hover {
-      transform: scale(1.03);
-      transition: transform 0.4s ease;
-    }
-
-    @keyframes fadeInUp {
-      0% {
-        opacity: 0;
-        transform: translateY(40px);
-      }
-      100% {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
   </style>
-
 </head>
 <body>
   <div class="bg-animate"></div>
   <div class="lang-toggle" onclick="toggleLanguage()">English / 中文</div>
 
   <div class="zh active">
+    <div class="zone" style="background-color: rgba(255, 204, 0, 0.1); border: 2px solid #ffcc00;">
+      <h2 style="color: #ffcc00;">📍 活動地點</h2>
+      <p style="font-size: 1.2rem;"><strong>影展活動舉辦於：</strong></p>
+      <p style="font-size: 1.4rem; color: #fff; font-weight: bold;">義守大學 綜合教學大樓1樓<br>WBC多功能展演交流空間</p>
+      <p style="margin-top: 12px;">交通資訊與學校位置請見下方說明</p>
+    
+    <!-- 客運區塊（中文） -->
     <div class="zone">
       <h2>🚍 義大客運交通資訊</h2>
       <img src="https://11th-exhibition.github.io/TrafficForWeb/images/義大客運105-V2.jpg" alt="義大客運車輛圖">
@@ -157,21 +148,33 @@
         <li>96　：義大醫院 ⇄ 義大世界</li>
         <li>E03A：高鐵左營站 ⇄ 義大醫院（走國道10號）</li>
         <li>E03B：高鐵左營站 ⇄ 義大醫院（經博愛四路、高楠公路、大社中正路、樹德科大校區）</li>
+        <li>義大客運時刻表查詢：<a href="https://www.edabus.com.tw/route/page/9/timetable" target="_blank">官方網站</a></li>
       </ul>
       <a href="https://www.edabus.com.tw/route/page/1/timetable" class="map-link" target="_blank">🚌 義大客運乘車資訊</a>
     </div>
 
+    <!-- 義守大學區塊（中文） -->
     <div class="zone">
       <h2>🏫 義守大學 校本部資訊</h2>
       <img src="https://11th-exhibition.github.io/TrafficForWeb/images/義守大學校本部校門入口處.jpg" alt="義守大學校門入口">
       <p><strong>地址：</strong>84001 高雄市大樹區學城路一段1號</p>
       <p><strong>電話：</strong>(07) 657-7711</p>
       <p><strong>官方網站：</strong><a href="https://www.isu.edu.tw" target="_blank">https://www.isu.edu.tw</a></p>
-      <a href="https://maps.app.goo.gl/BDqLSLnAzJdYZ8Vm8" class="map-link" target="_blank">📍 查看地圖</a>
+      <p><strong>簡介：</strong>義守大學由企業家林義守創辦，設有9個學院、43個學系與2個英語學程，學生約15,000人，90%教師具博士學位。</p>
+      <p><strong>特色：</strong>智慧健康醫療、科技創新雙軸發展，重視跨域整合與國際接軌。</p>
+      <a href="https://maps.app.goo.gl/fJhTP1FP7kbsMpXMA" class="map-link" target="_blank">📍 查看地圖</a>
     </div>
   </div>
 
   <div class="en">
+    <div class="zone" style="background-color: rgba(255, 204, 0, 0.1); border: 2px solid #ffcc00;">
+      <h2 style="color: #ffcc00;">📍 Event Location</h2>
+      <p style="font-size: 1.2rem;"><strong>The film festival will be held at:</strong></p>
+      <p style="font-size: 1.4rem; color: #fff; font-weight: bold;">1F, Integrated Teaching Building, I-Shou University<br>WBC Multi-functional Performance & Exchange Space</p>
+      <p style="margin-top: 12px;">See below for transportation and campus info.</p>
+    </div>
+
+    <!-- 英文區塊補上 -->
     <div class="zone">
       <h2>🚍 E-DA Shuttle Bus Info</h2>
       <img src="https://11th-exhibition.github.io/TrafficForWeb/images/義大客運105-V2.jpg" alt="E-DA Bus">
@@ -198,7 +201,14 @@
       <p><strong>Website:</strong> <a href="https://www.isu.edu.tw" target="_blank">https://www.isu.edu.tw</a></p>
       <p><strong>Overview:</strong> Founded by Mr. Lin Yi-Shou, ISU offers 9 colleges, 43 departments, 2 English programs, ~15,000 students, 90% PhD faculty.</p>
       <p><strong>Focus:</strong> Smart healthcare and tech innovation with interdisciplinary global education.</p>
-      <a href="https://maps.app.goo.gl/BDqLSLnAzJdYZ8Vm8" class="map-link" target="_blank">📍 View on Google Maps</a>
+      <a href="https://maps.app.goo.gl/fJhTP1FP7kbsMpXMA" class="map-link" target="_blank">📍 View on Google Maps</a>
+    </div>
+
+    <div class="zone" style="background-color: rgba(255, 204, 0, 0.1); border: 2px solid #ffcc00;">
+      <h2 style="color: #ffcc00;">📍 Event Location</h2>
+      <p style="font-size: 1.2rem;"><strong>The film festival will be held at:</strong></p>
+      <p style="font-size: 1.4rem; color: #fff; font-weight: bold;">1F, Integrated Teaching Building, I-Shou University<br>WBC Multi-functional Performance & Exchange Space</p>
+      <p style="margin-top: 12px;">See below for transportation and campus info.</p>
     </div>
   </div>
 
