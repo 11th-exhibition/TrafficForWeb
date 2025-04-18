@@ -103,7 +103,9 @@
   <div class="content zh">
     <img src="https://11th-exhibition.github.io/TrafficForWeb/images/義大客運105-V2.jpg" alt="義大客運車輛圖" class="photo">
     <h1>交通資訊</h1>
-    <p>義守大學，84001高雄市大樹區學城路一段1號</p>
+    <p>義守大學（校本部）地址：84001 高雄市大樹區學城路一段1號</p>
+    <p>Google Maps 位置：<a href="https://maps.app.goo.gl/fJhTP1FP7kbsMpXMA" target="_blank">點我前往</a></p>
+    <img src="https://11th-exhibition.github.io/TrafficForWeb/images/義守大學校本部校門入口處.jpg" alt="義守大學校門入口" class="photo">
     <p>搭乘大眾交通工具：</p>
     <ul>
       <li>高雄轉搭下列義大客運公車：</li>
@@ -116,6 +118,7 @@
       <li>96　：義大醫院 ⇄ 義大世界</li>
       <li>E03A：高鐵左營站 ⇄ 義大醫院（走國道10號）</li>
       <li>E03B：高鐵左營站 ⇄ 義大醫院（經博愛四路、高楠公路、大社中正路、樹德科大校區）</li>
+      <li>義大客運時刻表查詢：<a href="https://www.edabus.com.tw/route/page/9/timetable" target="_blank">官方網站</a></li>
     </ul>
     <a href="https://www.edabus.com.tw/route/page/1/timetable" class="map-link" target="_blank">🚌 義大客運乘車資訊</a>
   </div>
@@ -123,7 +126,9 @@
   <div class="content en">
     <img src="https://11th-exhibition.github.io/TrafficForWeb/images/義大客運105-V2.jpg" alt="E-DA Bus Photo" class="photo">
     <h1>Transportation Info</h1>
-    <p>I-Shou University, No.1, Sec. 1, Xuecheng Rd., Dashu Dist., Kaohsiung City 84001</p>
+    <p>I-Shou University (Main Campus) Address: No.1, Sec. 1, Xuecheng Rd., Dashu Dist., Kaohsiung City 84001</p>
+    <p>Google Maps Location: <a href="https://maps.app.goo.gl/fJhTP1FP7kbsMpXMA" target="_blank">Open in Maps</a></p>
+    <img src="https://11th-exhibition.github.io/TrafficForWeb/images/義守大學校本部校門入口處.jpg" alt="I-Shou Main Campus Gate" class="photo">
     <p>Public Transportation:</p>
     <ul>
       <li>From Kaohsiung, transfer to the following E-DA shuttle routes:</li>
@@ -136,6 +141,7 @@
       <li>96　: E-DA Hospital ⇄ E-DA World</li>
       <li>E03A: Zuoying HSR ⇄ E-DA Hospital (via Freeway No.10)</li>
       <li>E03B: Zuoying HSR ⇄ E-DA Hospital (via Bo’ai 4th Rd, Gaonan Rd, Dashu Zhongzheng Rd, Shu-Te Univ)</li>
+      <li>Timetable: <a href="https://www.edabus.com.tw/route/page/9/timetable" target="_blank">Official Link</a></li>
     </ul>
     <a href="https://www.edabus.com.tw/route/page/1/timetable" class="map-link" target="_blank">🚌 E-DA Bus Timetable</a>
   </div>
@@ -144,13 +150,8 @@
     function toggleLanguage() {
       const zh = document.querySelector('.zh');
       const en = document.querySelector('.en');
-      if (zh.style.display === 'none') {
-        zh.style.display = 'block';
-        en.style.display = 'none';
-      } else {
-        zh.style.display = 'none';
-        en.style.display = 'block';
-      }
+      zh.style.display = zh.style.display === 'none' ? 'block' : 'none';
+      en.style.display = en.style.display === 'none' ? 'block' : 'none';
     }
   </script>
 </body>
