@@ -88,6 +88,10 @@
       }
     }
 
+    .zh {
+      display: block;
+    }
+
     .en {
       display: none;
     }
@@ -142,8 +146,13 @@
     function toggleLanguage() {
       const zh = document.querySelector('.zh');
       const en = document.querySelector('.en');
-      zh.style.display = zh.style.display === 'none' ? 'block' : 'none';
-      en.style.display = en.style.display === 'none' ? 'block' : 'none';
+      if (zh.style.display === 'none') {
+        zh.style.display = 'block';
+        en.style.display = 'none';
+      } else {
+        zh.style.display = 'none';
+        en.style.display = 'block';
+      }
     }
   </script>
 </body>
