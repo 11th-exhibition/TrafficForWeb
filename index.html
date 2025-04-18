@@ -14,6 +14,19 @@
       color: #fff;
     }
 
+    .lang-toggle {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background-color: rgba(255,255,255,0.1);
+      color: #fff;
+      border: 1px solid #fff;
+      padding: 8px 12px;
+      border-radius: 6px;
+      cursor: pointer;
+      z-index: 1000;
+    }
+
     .zone {
       background-color: rgba(0, 0, 0, 0.7);
       margin: 40px auto;
@@ -63,37 +76,84 @@
       text-decoration: none;
       font-weight: bold;
     }
+
+    .zh, .en {
+      display: none;
+    }
+
+    .zh.active, .en.active {
+      display: block;
+    }
   </style>
 </head>
 <body>
+  <div class="lang-toggle" onclick="toggleLanguage()">English / 中文</div>
 
-  <div class="zone">
-    <h2>🚍 義大客運交通資訊</h2>
-    <img src="https://11th-exhibition.github.io/TrafficForWeb/images/義大客運105-V2.jpg" alt="義大客運車輛圖">
-    <ul>
-      <li>8501：高鐵左營站 ⇄ 義大世界（走國道10號）</li>
-      <li>8502：高雄美術館 ⇄ 義大世界（經捷運巨蛋、凹子底站）</li>
-      <li>8503：市政大樓 ⇄ 義大世界（經捷運文化中心站、臺鐵科工館站）</li>
-      <li>8504：鳳陽社區 ⇄ 義大世界（經捷運鳳山國中站、大東站、鳳山轉運站、臺鐵鳳山站）</li>
-      <li>8505：捷運前鎮高中站 ⇄ 義大世界（經捷運衛武營、苓雅運動園區站）</li>
-      <li>8506：臺鐵岡山車站 ⇄ 義大世界（經捷運岡山高醫站、橋頭火車站等）</li>
-      <li>96：義大醫院 ⇄ 義大世界</li>
-      <li>E03A：高鐵左營站 ⇄ 義大醫院（走國道10號）</li>
-      <li>E03B：高鐵左營站 ⇄ 義大醫院（經博愛四路、高楠公路等）</li>
-    </ul>
-    <a href="https://www.edabus.com.tw/route/page/1/timetable" target="_blank" class="map-link">🚌 前往義大客運時刻表</a>
+  <div class="zh active">
+    <div class="zone">
+      <h2>🚍 義大客運交通資訊</h2>
+      <img src="https://11th-exhibition.github.io/TrafficForWeb/images/義大客運105-V2.jpg" alt="義大客運車輛圖">
+      <ul>
+        <li>8501：高鐵左營站 ⇄ 義大世界（走國道10號）</li>
+        <li>8502：高雄美術館 ⇄ 義大世界（經捷運巨蛋、凹子底站）</li>
+        <li>8503：市政大樓 ⇄ 義大世界（經捷運文化中心站、臺鐵科工館站）</li>
+        <li>8504：鳳陽社區 ⇄ 義大世界（經捷運鳳山國中站、大東站、鳳山轉運站、臺鐵鳳山站）</li>
+        <li>8505：捷運前鎮高中站 ⇄ 義大世界（經捷運衛武營、苓雅運動園區站）</li>
+        <li>8506：臺鐵岡山車站 ⇄ 義大世界（經捷運岡山高醫站、橋頭火車站等）</li>
+        <li>96：義大醫院 ⇄ 義大世界</li>
+        <li>E03A：高鐵左營站 ⇄ 義大醫院（走國道10號）</li>
+        <li>E03B：高鐵左營站 ⇄ 義大醫院（經博愛四路、高楠公路等）</li>
+      </ul>
+      <a href="https://www.edabus.com.tw/route/page/1/timetable" target="_blank" class="map-link">🚌 前往義大客運時刻表</a>
+    </div>
+
+    <div class="zone">
+      <h2>🏫 義守大學 校本部資訊</h2>
+      <img src="https://11th-exhibition.github.io/TrafficForWeb/images/義守大學校本部校門入口處.jpg" alt="義守大學校門入口">
+      <p><strong>地址：</strong>84001 高雄市大樹區學城路一段1號</p>
+      <p><strong>電話：</strong>(07) 657-7711</p>
+      <p><strong>官方網站：</strong><a href="https://www.isu.edu.tw" target="_blank">https://www.isu.edu.tw</a></p>
+      <p><strong>學校簡介：</strong>義守大學由企業家林義守先生創辦，設有9個學院、43個學系及2個全英語學士學位學程，學生約15,000人，教師近九成具博士學位。</p>
+      <p><strong>校務發展：</strong>聚焦「智慧健康醫療」與「科技創新」為雙軸，發展跨域整合人才。</p>
+      <a href="https://maps.app.goo.gl/fJhTP1FP7kbsMpXMA" class="map-link" target="_blank">📍 查看地圖</a>
+    </div>
   </div>
 
-  <div class="zone">
-    <h2>🏫 義守大學 校本部資訊</h2>
-    <img src="https://11th-exhibition.github.io/TrafficForWeb/images/義守大學校本部校門入口處.jpg" alt="義守大學校門入口">
-    <p><strong>地址：</strong>84001 高雄市大樹區學城路一段1號</p>
-    <p><strong>電話：</strong>(07) 657-7711</p>
-    <p><strong>官方網站：</strong><a href="https://www.isu.edu.tw" target="_blank">https://www.isu.edu.tw</a></p>
-    <p><strong>學校簡介：</strong>義守大學由企業家林義守先生創辦，設有9個學院、43個學系及2個全英語學士學位學程，學生約15,000人，教師近九成具博士學位，為南臺灣頂尖私校之一。</p>
-    <p><strong>校務發展：</strong>以「智慧健康醫療」與「科技創新」為兩大主軸，發展跨域整合型人才培育課程。</p>
-    <a href="https://maps.app.goo.gl/fJhTP1FP7kbsMpXMA" class="map-link" target="_blank">📍 查看地圖</a>
+  <div class="en">
+    <div class="zone">
+      <h2>🚍 E-DA Shuttle Bus Info</h2>
+      <img src="https://11th-exhibition.github.io/TrafficForWeb/images/義大客運105-V2.jpg" alt="E-DA Bus">
+      <ul>
+        <li>8501: Zuoying HSR ⇄ E-DA World (via Freeway No.10)</li>
+        <li>8502: Art Museum ⇄ E-DA World (via MRT Arena, Aozihdi)</li>
+        <li>8503: City Hall ⇄ E-DA World (via MRT Culture Center, TRA Museum)</li>
+        <li>8504: Fengyang ⇄ E-DA World (via MRT Fongshan Jr High, Dadong, TRA Fongshan)</li>
+        <li>8505: MRT Qianzhen HS ⇄ E-DA World (via MRT Weiwuying, Linyuan Park)</li>
+        <li>8506: TRA Gangshan ⇄ E-DA World (via MRT Gangshan, Qiaotou, Qingpu)</li>
+        <li>96: E-DA Hospital ⇄ E-DA World</li>
+        <li>E03A: Zuoying HSR ⇄ E-DA Hospital (via Freeway No.10)</li>
+        <li>E03B: Zuoying HSR ⇄ E-DA Hospital (via Bo’ai 4th Rd, Gaonan Rd)</li>
+      </ul>
+      <a href="https://www.edabus.com.tw/route/page/1/timetable" target="_blank" class="map-link">🚌 View Bus Timetable</a>
+    </div>
+
+    <div class="zone">
+      <h2>🏫 I-Shou University (Main Campus)</h2>
+      <img src="https://11th-exhibition.github.io/TrafficForWeb/images/義守大學校本部校門入口處.jpg" alt="ISU Gate">
+      <p><strong>Address:</strong> No.1, Sec.1, Xuecheng Rd., Dashu Dist., Kaohsiung City 84001</p>
+      <p><strong>Phone:</strong> +886-7-657-7711</p>
+      <p><strong>Website:</strong> <a href="https://www.isu.edu.tw" target="_blank">https://www.isu.edu.tw</a></p>
+      <p><strong>Overview:</strong> Founded by Lin Yi-Shou, ISU has 9 colleges, 43 departments and 2 English-medium programs, with over 15,000 students and 90% of faculty holding PhDs.</p>
+      <p><strong>Focus:</strong> Smart Healthcare & Tech Innovation for interdisciplinary talent development.</p>
+      <a href="https://maps.app.goo.gl/fJhTP1FP7kbsMpXMA" class="map-link" target="_blank">📍 View on Google Maps</a>
+    </div>
   </div>
 
+  <script>
+    function toggleLanguage() {
+      document.querySelector('.zh').classList.toggle('active');
+      document.querySelector('.en').classList.toggle('active');
+    }
+  </script>
 </body>
 </html>
