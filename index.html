@@ -1,1 +1,102 @@
-<!DOCTYPE html><html lang='zh-Hant'><head><meta charset='UTF-8'><title>交通資訊</title><link rel='stylesheet' href='style.css'><script defer src='script.js'></script></head><body><header><div class='lang-toggle'><button onclick="setLanguage('zh')">中文</button><button onclick="setLanguage('en')">EN</button></div><h1 data-zh='交通資訊' data-en='Transportation Info'>交通資訊</h1><div data-zh='義守大學 · NTV11 畢業展演' data-en='I-Shou University · NTV11 Graduation Exhibition'>義守大學 · NTV11 畢業展演</div></header><main class='container'><section class='fade-in'><h2 data-zh='🚌 公車資訊' data-en='🚌 Bus Information'>🚌 公車資訊</h2><ul><li data-zh='8501｜高鐵左營站 ↔ 義大醫院（經義守大學）' data-en='8501: Zuoying HSR Station ↔ E-DA Hospital (via I-Shou University)'>8501｜高鐵左營站 ↔ 義大醫院（經義守大學）</li><li data-zh='8502｜鳳山轉運站 ↔ 義大醫院' data-en='8502: Fengshan Bus Terminal ↔ E-DA Hospital'>8502｜鳳山轉運站 ↔ 義大醫院</li><li data-zh='8503｜小港 ↔ 義大醫院' data-en='8503: Xiaogang ↔ E-DA Hospital'>8503｜小港 ↔ 義大醫院</li><li data-zh='8504｜仁武 ↔ 義大醫院' data-en='8504: Renwu ↔ E-DA Hospital'>8504｜仁武 ↔ 義大醫院</li><li data-zh='8505｜岡山 ↔ 義大醫院' data-en='8505: Gangshan ↔ E-DA Hospital'>8505｜岡山 ↔ 義大醫院</li><li data-zh='8506｜楠梓火車站 ↔ 義大醫院' data-en='8506: Nanzih Train Station ↔ E-DA Hospital'>8506｜楠梓火車站 ↔ 義大醫院</li><li data-zh='96｜高雄車站 ↔ 義守大學' data-en='96: Kaohsiung Train Station ↔ I-Shou University'>96｜高雄車站 ↔ 義守大學</li><li data-zh='E03A｜高鐵左營站 ↔ 義守大學（快速線）' data-en='E03A: Zuoying HSR Station ↔ I-Shou University (Express)'>E03A｜高鐵左營站 ↔ 義守大學（快速線）</li><li data-zh='E03B｜高鐵左營站 ↔ 義守大學（經高雄大學）' data-en='E03B: Zuoying HSR Station ↔ I-Shou University (via NKUHT)'>E03B｜高鐵左營站 ↔ 義守大學（經高雄大學）</li></ul><p><a href='https://www.edabus.com.tw/route/page/9/timetable' class='timetable-link' target='_blank'>🔗 點我查看完整時刻表</a></p></section></main><footer><p>© NTV11 Graduation Exhibition</p></footer></body></html>
+
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>交通資訊 | NTV11</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Noto Sans TC', sans-serif;
+      color: #fff;
+      background-image: url('https://11th-exhibition.github.io/TrafficForWeb/images/1.3png.png');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+    }
+
+    .content {
+      background-color: rgba(0, 0, 0, 0.6);
+      padding: 40px;
+      max-width: 900px;
+      margin: auto;
+      border-radius: 16px;
+      backdrop-filter: blur(4px);
+    }
+
+    h1 {
+      font-size: 2em;
+      margin-bottom: 20px;
+      color: #ffcc00;
+    }
+
+    p, li {
+      font-size: 1rem;
+      line-height: 1.8;
+    }
+
+    ul {
+      padding-left: 24px;
+    }
+
+    a {
+      color: #00cfff;
+    }
+
+    .lang-toggle {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background-color: rgba(0,0,0,0.5);
+      color: #fff;
+      border: 1px solid #fff;
+      padding: 8px 12px;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .en {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="lang-toggle" onclick="toggleLanguage()">English / 中文</div>
+
+  <div class="content">
+    <div class="zh">
+      <h1>交通資訊</h1>
+      <p>義守大學，84001高雄市大樹區學城路一段1號</p>
+      <p>搭乘大眾交通工具：</p>
+      <ul>
+        <li>高鐵左營站轉搭 E03A、E03B、8501~8506 義大客運</li>
+        <li>高雄捷運紅線（至左營站）轉搭公車</li>
+        <li>義大客運時刻表查詢：<a href="https://www.edabus.com.tw/route/page/9/timetable" target="_blank">官方網站</a></li>
+      </ul>
+    </div>
+
+    <div class="en">
+      <h1>Transportation</h1>
+      <p>I-Shou University, No.1, Sec. 1, Xuecheng Rd., Dashu Dist., Kaohsiung City 84001</p>
+      <p>Public Transportation:</p>
+      <ul>
+        <li>From Zuoying HSR Station: Take E03A, E03B, or buses 8501~8506</li>
+        <li>Take MRT Red Line to Zuoying Station, then transfer to bus</li>
+        <li>Timetable: <a href="https://www.edabus.com.tw/route/page/9/timetable" target="_blank">E-Da Bus Official Site</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <script>
+    function toggleLanguage() {
+      const zh = document.querySelector('.zh');
+      const en = document.querySelector('.en');
+      zh.style.display = zh.style.display === 'none' ? 'block' : 'none';
+      en.style.display = en.style.display === 'none' ? 'block' : 'none';
+    }
+  </script>
+</body>
+</html>
